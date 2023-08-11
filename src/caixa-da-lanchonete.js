@@ -31,7 +31,16 @@ class CaixaDaLanchonete {
       }
 
       if (this.#produtos.has(codigo)) {
-        produtos.add(codigo);
+        if (codigo === "combo1") {
+          produtos.add("suco");
+          produtos.add("sanduiche");
+        } else if (codigo === "combo2") {
+          produtos.add("cafe");
+          produtos.add("sanduiche");
+        } else {
+          produtos.add(codigo);
+        }
+
         const custo = this.#produtos.get(codigo);
         total += custo * qtd;
       } else {
